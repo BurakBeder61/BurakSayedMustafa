@@ -5,7 +5,7 @@
 
 - **Burak Hakki Beder**
 - **Mustafa Mohammadi**
-- **Sayed mohamed**
+- **Sayed Mohamed**
 
 ## Projektbeschreibung
 
