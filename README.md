@@ -13,13 +13,16 @@
 
 ### Aufgaben- bzw. Problemstellung
 #### 1.	Liste von Aufgaben, die erledigt werden sollen
+
 **Es soll eine Liste (ToDoList) erstellt werden können, indem man gewünschte Namen eingeben kann und sie Kategorisieren kann unter andere Listen.**
 
 #### 2.	Schwer alles zu merken
+
 **Es ist nicht leicht bei so vielen Aufgaben sich alles zu merken, deshalb wäre es ohne Liste schwer im Alltag und Problematisch.**
 
 #### 3.	Neue Aufgaben
-**Während man die anderen Aufgaben noch zu erledigen hat, können neue Aufgaben auftauchen oder bereits welche erledigt werden, deshalb ist eine Aktualisierung Option notwendig.**
+
+**Während man die anderen Aufgaben noch zu erledigen hat, können neue Aufgaben auftauchen oder bereits welche erledigt werden, deshalb ist eine Aktualisierungs Option notwendig.**
 
 ### Funktionsumfang und Funktionsweise aus Anwendersicht
 **Das Programm „ToDoList“ besteht aus verschiedenen zusammengesetzten Programmen, die alle eine Funktion dienen. Diese lauten:**
