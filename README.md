@@ -7,7 +7,7 @@
 - **Mustafa Mohammadi**
 - **Sayed Mohamed**
 
-**Kontakt:** <burakbeder@outlook.de>
+**Kontakt:** <bb.dhbw-stuttgart@outlook.de>
 
 ## Projektbeschreibung
 
