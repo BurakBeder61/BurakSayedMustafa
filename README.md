@@ -12,17 +12,17 @@
 ## Projektbeschreibung
 
 ### Aufgaben- bzw. Problemstellung
-#### 1.	Liste von Aufgaben, die erledigt werden sollen
+####  Aufgaben 
+1.	Auflistung von Aufgaben
+2.	Strukturierung von Aufgaben
+3.	Bearbeitung der Aufgaben
+4.	Übersichtlichkeit
 
-**Es soll eine Liste (ToDoList) erstellt werden können, indem man gewünschte Namen eingeben kann und sie Kategorisieren kann unter andere Listen.**
-
-#### 2.	Schwer alles zu merken
-
-**Es ist nicht leicht bei so vielen Aufgaben sich alles zu merken, deshalb wäre es ohne Liste schwer im Alltag und Problematisch.**
-
-#### 3.	Neue Aufgaben
-
-**Während man die anderen Aufgaben noch zu erledigen hat, können neue Aufgaben auftauchen oder bereits welche erledigt werden, deshalb ist eine Aktualisierungs Option notwendig.**
+#### Problemstellung
+1. Durch viele Aufgaben Verlust der Überblick und Zeit
+2. Ohne Ordnung können Aufgaben verloren gehen
+3. Es kommen immer neue Aufgaben während die alten noch erledigt werden müssen
+4. Mensch ist begrenzt --> führt zu vergesslichkeit
 
 ### Funktionsumfang und Funktionsweise aus Anwendersicht
 **Das Programm „ToDoList“ besteht aus verschiedenen zusammengesetzten Programmen, die alle eine Funktion dienen. Diese lauten:**
@@ -32,8 +32,9 @@
 -	Aufgaben sortieren in verschiedene Listen
 -	Per click Aufgaben erledigen somit sie erledigt angezeigt werden (Kreuz oder durchgestrichen)
 -	Speicherung der Listen
+-	Reminder der Aufgaben
 
 ### Angestrebte Lösung aus technischer Sicht
-**Der Anwender soll hiermit durch einfache Wege Aufgaben, die zu erledigen sind, speichern und auflisten können. Es soll möglich sein durch abstrakte Listen durch die Liste zu navigieren.**
+**Eine ToDoList erstellen durch verkettete Listen ermöglicht es Daten beziehungsweise Elemente flexibel zu speichern. Hierdurch wirkt ein dynamisches Speicherverhalten. Es sollen effizient Daten gespeichert werden können und darauf zugegriffen werden können vom Anwender.**
 
 
