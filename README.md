@@ -35,6 +35,6 @@
 -	Reminder der Aufgaben
 
 ### Angestrebte Lösung aus technischer Sicht
-**Eine ToDoList erstellen durch verkettete Listen ermöglicht es Daten beziehungsweise Elemente flexibel zu speichern. Hierdurch wirkt ein dynamisches Speicherverhalten. Es sollen effizient Daten gespeichert werden können und darauf zugegriffen werden können vom Anwender.**
+Eine ToDoList erstellen durch verkettete Listen ermöglicht es Daten beziehungsweise Elemente flexibel zu speichern. Hierdurch wirkt ein dynamisches Speicherverhalten. Es sollen effizient Daten gespeichert werden können und darauf zugegriffen werden können vom Anwender.
 
 
