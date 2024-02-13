@@ -106,7 +106,75 @@ void addTask(struct TaskList* list, const char* taskName) {
         printf("Task not found in %s. No task deleted.\n", list->name);
     }
 }
+´´´
 
+
+# List Creation:
+
+* The function takes a double pointer to the head of the task list (struct TaskList** head) and the name of the new list (const char* listName).
+* It allocates memory for a new TaskList structure using malloc.
+* The name of the new list is copied into the name field of the TaskList.
+* The head of the new list is set to NULL since there are initially no tasks in the list.
+* The newList is inserted at the beginning of the linked list, and the head is updated to point to the new list.
+
+´´´
+	void addList(struct TaskList** head, const char* listName) {
+    if (*head == NULL) {
+        printf("Head is NULL.\n");
+        return;
+    }
+
+    struct TaskList* newList = (struct TaskList*)malloc(sizeof(struct TaskList));
+    if (newList == NULL) {
+        printf("Memory allocation failed.\n");
+        return;
+    }
+
+    strncpy(newList->name, listName, sizeof(newList->name) - 1);
+    newList->name[sizeof(newList->name) - 1] = '\0'; // Ensure null-termination
+    newList->head = NULL;
+    newList->next = *head;
+    *head = newList;
+    printf("List %s created successfully!\n", listName);
+}
+
+´´´
+
+# List Deletion:
+
+* The function takes a TaskList and the name of the task to be deleted (const char* taskName).
+* It iterates through the linked list of tasks within the given task list to find the task with the specified name.
+* If the task is found, it is removed from the linked list, and its memory is freed using free.
+* If the task is not found, an appropriate message is printed.
+
+
+´´´
+void deleteTask(struct TaskList* list, const char* taskName) {
+    if (list == NULL) {
+        printf("List does not exist.\n");
+        return;
+    }
+
+    struct Task* current = list->head;
+    struct Task* prev = NULL;
+
+    while (current != NULL && strcmp(current->name, taskName) != 0) {
+        prev = current;
+        current = current->next;
+    }
+
+    if (current != NULL) {
+        if (prev == NULL) {
+            list->head = current->next;
+        } else {
+            prev->next = current->next;
+        }
+        free(current);
+        printf("Task deleted from %s successfully!\n", list->name);
+    } else {
+        printf("Task not found in %s. No task deleted.\n", list->name);
+    }
+}
 
 ´´´
 
