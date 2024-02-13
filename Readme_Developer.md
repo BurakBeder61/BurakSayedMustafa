@@ -3,12 +3,12 @@
 ## Code Explanations: 
 
 # Control through arrows: 
-The program enters a do-while loop to continuously prompt the user for input until the user presses 'q' to quit.
-Inside the loop, the program prints a message to the console instructing the user to navigate using arrow keys.
-The scanf function is used to capture a single character input from the user, and the result is stored in the variable choice.
-The switch (choice) statement is then used to handle the user's input. In the case of 'w' or 's', the program checks if the arrow position (PfeilPos) is within bounds (1 to 6) before adjusting it accordingly. After adjusting the position, the SwitchArrow function is called with the updated position to display the menu with the arrow indicating the current selection.
-The loop continues until the user presses 'q', at which point the program exits.
-The SwitchArrow function is responsible for displaying the menu with the arrow indicating the current selection based on the arrow position. It is defined earlier in the code and not shown here, but it's used to visually guide the user through the available options.
+* The program enters a do-while loop to continuously prompt the user for input until the user presses 'q' to quit.
+* Inside the loop, the program prints a message to the console instructing the user to navigate using arrow keys.
+* The scanf function is used to capture a single character input from the user, and the result is stored in the variable choice.
+* The switch (choice) statement is then used to handle the user's input. In the case of 'w' or 's', the program checks if the arrow position (PfeilPos) is within bounds (1 to 6) before adjusting it accordingly. After adjusting the position, the SwitchArrow function is called with the updated position to display the menu with the arrow indicating the current selection.
+* The loop continues until the user presses 'q', at which point the program exits.
+* The SwitchArrow function is responsible for displaying the menu with the arrow indicating the current selection based on the arrow position. It is defined earlier in the code and not shown here, but it's used to visually guide the user through the available options.
 
 ```
 	do {
