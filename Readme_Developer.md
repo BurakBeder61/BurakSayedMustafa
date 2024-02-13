@@ -47,8 +47,7 @@
 * A success message is printed.
 
 ```
-
-void addTask(struct TaskList* list, const char* taskName) {
+	void addTask(struct TaskList* list, const char* taskName) {
     if (list == NULL) {
         printf("List does not exist.\n");
         return;
@@ -68,7 +67,7 @@ void addTask(struct TaskList* list, const char* taskName) {
     list->head = newTask;
 
     printf("Task added to %s successfully!\n", list->name);
-}
+	}
 
 ```
 
@@ -78,7 +77,7 @@ void addTask(struct TaskList* list, const char* taskName) {
 * If the task is found, it is removed from the linked list, and its memory is freed.
 * If the task is not found, an appropriate message is printed.
 
-´´´
+```
 
 	void deleteTask(struct TaskList* list, const char* taskName) {
     if (list == NULL) {
@@ -105,8 +104,8 @@ void addTask(struct TaskList* list, const char* taskName) {
     } else {
         printf("Task not found in %s. No task deleted.\n", list->name);
     }
-}
-´´´
+	}
+```
 
 
 # List Creation:
@@ -117,7 +116,7 @@ void addTask(struct TaskList* list, const char* taskName) {
 * The head of the new list is set to NULL since there are initially no tasks in the list.
 * The newList is inserted at the beginning of the linked list, and the head is updated to point to the new list.
 
-´´´
+```
 	void addList(struct TaskList** head, const char* listName) {
     if (*head == NULL) {
         printf("Head is NULL.\n");
@@ -136,9 +135,9 @@ void addTask(struct TaskList* list, const char* taskName) {
     newList->next = *head;
     *head = newList;
     printf("List %s created successfully!\n", listName);
-}
+	}
 
-´´´
+```
 
 # List Deletion:
 
@@ -148,8 +147,8 @@ void addTask(struct TaskList* list, const char* taskName) {
 * If the task is not found, an appropriate message is printed.
 
 
-´´´
- void deleteTask(struct TaskList* list, const char* taskName) {
+```
+	 void deleteTask(struct TaskList* list, const char* taskName) {
     if (list == NULL) {
         printf("List does not exist.\n");
         return;
@@ -174,7 +173,7 @@ void addTask(struct TaskList* list, const char* taskName) {
     } else {
         printf("Task not found in %s. No task deleted.\n", list->name);
     }
- }
+ 	}
 
-´´´
+```
 
