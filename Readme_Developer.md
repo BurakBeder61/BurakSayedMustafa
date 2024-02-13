@@ -149,7 +149,7 @@ void addTask(struct TaskList* list, const char* taskName) {
 
 
 ´´´
-void deleteTask(struct TaskList* list, const char* taskName) {
+ void deleteTask(struct TaskList* list, const char* taskName) {
     if (list == NULL) {
         printf("List does not exist.\n");
         return;
@@ -174,7 +174,7 @@ void deleteTask(struct TaskList* list, const char* taskName) {
     } else {
         printf("Task not found in %s. No task deleted.\n", list->name);
     }
-}
+ }
 
 ´´´
 
