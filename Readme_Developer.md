@@ -38,7 +38,7 @@
 
 ```
 
-###Structs
+### Structs
 *In the following code we initialise and declerate our structs
 *The following Structs are used to create new tasks and new lists and much more, by using linked lists(verkettete Listen)
 ```
@@ -152,7 +152,7 @@ void addList(struct TaskList** head, const char* listName) {
 
 ```
 
-###List Selection
+### List Selection
 * The while branch loops as long as the current name is uneqaual to Null and is unequal to the name of another list
 * If that is the case, it changes the current Pointer to the new listname (UserInput)
 * If the user input is unequal to the existing lists, then a printf function displays that the list couldn't be found
@@ -176,7 +176,7 @@ struct TaskList* switchList(struct TaskList* head, const char* listName) {
 ```
 
 
-###display tasks
+### display tasks
 *In this code snippet we can see a if branch which asks if the List is equal to Null
 *if yes then it displays that the current list doesn't exist
 *Next it prints a message which tells the user the current list name
@@ -207,7 +207,7 @@ void displayTasks(struct TaskList* list) {
 ```
 
 
-###mark task as completed
+### mark task as completed
 *Again we check if the current list exists
 *Then we compare the current name with taskName and loop through the current tasks
 *If the Task exists it is marked as completed
@@ -234,7 +234,7 @@ void markTaskCompleted(struct TaskList* list, const char* taskName) {
 }
 ```
 
-###Arrow next to task
+### Arrow next to task
 *The SwitchArrow function displays the Pfeil String next to our Menu-Option
 *Which each case we complete all our options
 *If the user presses the up arrow key our PfeilPos(Pfeil-Position) prop decreases by one only until 1 which is checked with a if branch in the main function
