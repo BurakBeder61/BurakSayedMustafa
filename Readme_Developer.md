@@ -39,8 +39,8 @@
 ```
 
 ### Structs
-*In the following code we initialise and declerate our structs
-*The following Structs are used to create new tasks and new lists and much more, by using linked lists(verkettete Listen)
+* In the following code we initialise and declerate our structs
+* The following Structs are used to create new tasks and new lists and much more, by using linked lists(verkettete Listen)
 ```
 struct Task{
     char name[50];
@@ -177,12 +177,12 @@ struct TaskList* switchList(struct TaskList* head, const char* listName) {
 
 
 ### display tasks
-*In this code snippet we can see a if branch which asks if the List is equal to Null
-*if yes then it displays that the current list doesn't exist
-*Next it prints a message which tells the user the current list name
-*The tasks are checked to be completed or incompleted
-*Then the List Head is checked, to see if there are any elements in the current list
-*If the list Head s equal to Null, then it displays that there aren't any elements in the current list
+* In this code snippet we can see a if branch which asks if the List is equal to Null
+* if yes then it displays that the current list doesn't exist
+* Next it prints a message which tells the user the current list name
+* The tasks are checked to be completed or incompleted
+* Then the List Head is checked, to see if there are any elements in the current list
+* If the list Head s equal to Null, then it displays that there aren't any elements in the current list
 
 ```
 void displayTasks(struct TaskList* list) {
@@ -208,10 +208,10 @@ void displayTasks(struct TaskList* list) {
 
 
 ### mark task as completed
-*Again we check if the current list exists
-*Then we compare the current name with taskName and loop through the current tasks
-*If the Task exists it is marked as completed
-*If not, it displays <code>Task not found in (current ListName). No task marked as completed.</code>
+* Again we check if the current list exists
+* Then we compare the current name with taskName and loop through the current tasks
+* If the Task exists it is marked as completed
+* If not, it displays <code>Task not found in (current ListName). No task marked as completed.</code>
 ```
 void markTaskCompleted(struct TaskList* list, const char* taskName) {
     if (list == NULL) {
@@ -235,10 +235,10 @@ void markTaskCompleted(struct TaskList* list, const char* taskName) {
 ```
 
 ### Arrow next to task
-*The SwitchArrow function displays the Pfeil String next to our Menu-Option
-*Which each case we complete all our options
-*If the user presses the up arrow key our PfeilPos(Pfeil-Position) prop decreases by one only until 1 which is checked with a if branch in the main function
-*but if the arrow key down is pressed, the PfeilPos(Pfeil-Position) is increased by one until 6, because we only have 6 options
+* The SwitchArrow function displays the Pfeil String next to our Menu-Option
+* Which each case we complete all our options
+* If the user presses the up arrow key our PfeilPos(Pfeil-Position) prop decreases by one only until 1 which is checked with a if branch in the main function
+* but if the arrow key down is pressed, the PfeilPos(Pfeil-Position) is increased by one until 6, because we only have 6 options
 ```
 void SwitchArrow(int PfeilPos){
     char Pfeil[] = "<--";
