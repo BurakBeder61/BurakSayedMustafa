@@ -53,6 +53,12 @@ struct TaskList{
     struct Task* head;
     struct TaskList* next;
 };
+
+struct Reminder {
+    char message[100];
+    time_t trigger_time;
+    struct Reminder* next;
+};
 ```
 
 ### Task Creation: 
@@ -244,70 +250,107 @@ void SwitchArrow(int PfeilPos){
     char Pfeil[] = "<--";
 
     switch (PfeilPos) {
-        case 1:
-        printf("\n____________________________________________\n");
-        printf("Add Task %s\n", Pfeil);
-        printf("Delete Task\n");
-        printf("Mark Task as Completed\n");
-        printf("Display Tasks\n");
-        printf("Add List\n");
-        printf("Switch List\n");
-        printf("\n___________________________________________\n");
+     case 1:
+            printf("\n____________________________________________\n");
+            printf("Add Task %s\n", Pfeil);
+            printf("Delete Task\n");
+            printf("Mark Task as Completed\n");
+            printf("Display Tasks\n");
+            printf("Add List\n");
+            printf("Switch List\n");
+            printf("Add Reminder\n");
+            printf("Display Reminders\n");
+            printf("\n___________________________________________\n");
             break;
         
         case 2:
-        printf("\n____________________________________________\n");
-        printf("Add Task \n");
-        printf("Delete Task%s\n", Pfeil);
-        printf("Mark Task as Completed\n");
-        printf("Display Tasks\n");
-        printf("Add List\n");
-        printf("Switch List\n");
-        printf("\n___________________________________________\n");
+            printf("\n____________________________________________\n");
+            printf("Add Task \n");
+            printf("Delete Task%s\n", Pfeil);
+            printf("Mark Task as Completed\n");
+            printf("Display Tasks\n");
+            printf("Add List\n");
+            printf("Switch List\n");
+            printf("Add Reminder\n");
+            printf("Display Reminders\n");
+            printf("\n___________________________________________\n");
             break;
         
         case 3:
-        printf("\n____________________________________________\n");
-        printf("Add Task \n");
-        printf("Delete Task\n");
-        printf("Mark Task as Completed%s\n", Pfeil);
-        printf("Display Tasks\n");
-        printf("Add List\n");
-        printf("Switch List\n");
-        printf("\n___________________________________________\n");
+            printf("\n____________________________________________\n");
+            printf("Add Task \n");
+            printf("Delete Task\n");
+            printf("Mark Task as Completed%s\n", Pfeil);
+            printf("Display Tasks\n");
+            printf("Add List\n");
+            printf("Switch List\n");
+            printf("Add Reminder\n");
+            printf("Display Reminders\n");
+            printf("\n___________________________________________\n");
             break;
         
         case 4:
-        printf("\n____________________________________________\n");
-        printf("Add Task \n");
-        printf("Delete Task\n");
-        printf("Mark Task as Completed\n");
-        printf("Display Tasks%s\n", Pfeil);
-        printf("Add List\n");
-        printf("Switch List\n");
-        printf("\n___________________________________________\n");
+            printf("\n____________________________________________\n");
+            printf("Add Task \n");
+            printf("Delete Task\n");
+            printf("Mark Task as Completed\n");
+            printf("Display Tasks%s\n", Pfeil);
+            printf("Add List\n");
+            printf("Switch List\n");
+            printf("Add Reminder\n");
+            printf("Display Reminders\n");
+            printf("\n___________________________________________\n");
             break;
         
         case 5:
-        printf("\n____________________________________________\n");
-        printf("Add Task \n");
-        printf("Delete Task\n");
-        printf("Mark Task as Completed\n");
-        printf("Display Tasks\n");
-        printf("Add List%s\n", Pfeil);
-        printf("Switch List\n");
-        printf("\n___________________________________________\n");
+            printf("\n____________________________________________\n");
+            printf("Add Task \n");
+            printf("Delete Task\n");
+            printf("Mark Task as Completed\n");
+            printf("Display Tasks\n");
+            printf("Add List%s\n", Pfeil);
+            printf("Switch List\n");
+            printf("Add Reminder\n");
+            printf("Display Reminders\n");
+            printf("\n___________________________________________\n");
             break;
 
         case 6:
-        printf("\n____________________________________________\n");
-        printf("Add Task \n");
-        printf("Delete Task\n");
-        printf("Mark Task as Completed\n");
-        printf("Display Tasks\n");
-        printf("Add List\n");
-        printf("Switch List%s\n", Pfeil);
-        printf("\n___________________________________________\n");
+            printf("\n____________________________________________\n");
+            printf("Add Task \n");
+            printf("Delete Task\n");
+            printf("Mark Task as Completed\n");
+            printf("Display Tasks\n");
+            printf("Add List\n");
+            printf("Switch List%s\n", Pfeil);
+            printf("Add Reminder\n");
+            printf("Display Reminders\n");
+            printf("\n___________________________________________\n");
+            break;
+        case 7:
+            printf("\n____________________________________________\n");
+            printf("Add Task \n");
+            printf("Delete Task\n");
+            printf("Mark Task as Completed\n");
+            printf("Display Tasks\n");
+            printf("Add List\n");
+            printf("Switch List\n");
+            printf("Add Reminder%s\n", Pfeil);
+            printf("Display Reminders\n");
+            printf("\n___________________________________________\n");
+            break;
+
+        case 8:
+            printf("\n____________________________________________\n");
+            printf("Add Task \n");
+            printf("Delete Task\n");
+            printf("Mark Task as Completed\n");
+            printf("Display Tasks\n");
+            printf("Add List\n");
+            printf("Switch List\n");
+            printf("Add Reminder\n");
+            printf("Display Reminders%s\n", Pfeil);
+            printf("\n___________________________________________\n");
             break;
 
         default:
@@ -315,3 +358,60 @@ void SwitchArrow(int PfeilPos){
         }
 }
 ```
+# add reminders
+* With the addReminder function you can add new reminders
+* We declare the reminder in our struct and write each value into the created struct
+```
+void addReminder(struct Reminder** head, const char* message, time_t trigger_time) {
+    struct Reminder* newReminder = (struct Reminder*)malloc(sizeof(struct Reminder));
+    if (newReminder == NULL) {
+        printf("Memory allocation failed.\n");
+        return;
+    }
+    strncpy(newReminder->message, message, sizeof(newReminder->message) - 1);
+    newReminder->message[sizeof(newReminder->message) - 1] = '\0'; // Ensure null-termination
+    newReminder->trigger_time = trigger_time;
+    newReminder->next = *head;
+    *head = newReminder;
+    printf("Reminder added successfully!\n");
+}
+```
+
+# check reminders
+* Thsi function checks if the time for the timer is executed
+* after the timer is executed it deletes the timer automatically
+* it loops through each timer
+```
+void checkReminders(struct Reminder** head) {
+    time_t current_time = time(NULL);
+    struct Reminder* current = *head;
+    while (current != NULL) {
+        if (current_time >= current->trigger_time) {
+            printf("Reminder: %s\n", current->message);
+            // Remove triggered reminder from the list
+            struct Reminder* temp = current;
+            *head = current->next;
+            free(temp);
+            current = *head;
+        } else {
+            current = current->next;
+        }
+    }
+}
+```
+
+# display reminders
+* You can display the reminders with the displyReminders function
+* The functions enters a while loop where it loops through the reminders
+* showing their Trigger Time, message and ctime (a functions that shows it in thenformat of day, month, time and date)
+```
+void displayReminders(struct Reminder* head) {
+    printf("Reminders:\n");
+    struct Reminder* current = head;
+    while (current != NULL) {
+        printf("%s - Trigger Time: %s", current->message, ctime(&(current->trigger_time)));
+        current = current->next;
+    }
+}
+```
+
